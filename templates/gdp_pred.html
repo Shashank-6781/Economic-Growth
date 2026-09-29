@@ -1,0 +1,6 @@
+<!doctype html><html><head><title>GDP Prediction Result</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></head>
+<body><main><h1>GDP Prediction Result</h1>
+{% if error %}<p class="error">{{ error }}</p>
+{% elif prediction is not none %}<p class="result">Predicted GDP ($ per capita): {{ "%.2f"|format(prediction) }}</p>{% endif %}
+<a class="button" href="/home">Back</a></main></body></html>

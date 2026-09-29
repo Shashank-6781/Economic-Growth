@@ -1,0 +1,22 @@
+<!doctype html><html><head><title>GDP Prediction Input</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></head>
+<body><main><h1>GDP Prediction Input</h1>
+<form method="post" action="/predict"><label>Region</label><input name="Region" required>
+<label>Population</label><input name="Population" required>
+<label>Area (sq. mi.)</label><input name="Area (sq. mi.)" required>
+<label>Pop. Density (per sq. mi.)</label><input name="Pop. Density (per sq. mi.)" required>
+<label>Coastline (coast/area ratio)</label><input name="Coastline (coast/area ratio)" required>
+<label>Net migration</label><input name="Net migration" required>
+<label>Infant mortality (per 1000 births)</label><input name="Infant mortality (per 1000 births)" required>
+<label>Literacy (%)</label><input name="Literacy (%)" required>
+<label>Phones (per 1000)</label><input name="Phones (per 1000)" required>
+<label>Arable (%)</label><input name="Arable (%)" required>
+<label>Crops (%)</label><input name="Crops (%)" required>
+<label>Other (%)</label><input name="Other (%)" required>
+<label>Climate</label><input name="Climate" required>
+<label>Birthrate</label><input name="Birthrate" required>
+<label>Deathrate</label><input name="Deathrate" required>
+<label>Agriculture</label><input name="Agriculture" required>
+<label>Industry</label><input name="Industry" required>
+<label>Service</label><input name="Service" required><button type="submit">Predict GDP</button></form>
+</main></body></html>

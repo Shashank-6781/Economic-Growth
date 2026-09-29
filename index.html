@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Economic Growth — GDP Analysis Demo</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#f5f7fb;color:#172033}
+header{background:#1565c0;color:white;padding:32px 8%;text-align:center}
+main{max-width:1050px;margin:30px auto;padding:0 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+.card{background:white;padding:22px;border-radius:12px;box-shadow:0 3px 12px #0001}
+h2{color:#1565c0}.metric{font-size:28px;font-weight:bold}
+input{width:100%;padding:11px;box-sizing:border-box;margin:7px 0 14px;border:1px solid #ccc;border-radius:6px}
+button{background:#1565c0;color:white;border:0;padding:12px 20px;border-radius:7px;cursor:pointer}
+#result{margin-top:18px;padding:18px;background:#e8f5e9;border-radius:8px;font-weight:bold;display:none}
+footer{text-align:center;padding:30px;color:#667}
+</style>
+</head>
+<body>
+<header>
+<h1>Economic Growth</h1>
+<p>GDP Analysis and Prediction using Python, Machine Learning & Flask</p>
+</header>
+<main>
+<h2>Project Overview</h2>
+<div class="grid">
+<div class="card"><div class="metric">227</div>Dataset rows described in the project material</div>
+<div class="card"><div class="metric">20</div>Dataset columns described</div>
+<div class="card"><div class="metric">3</div>Regression models</div>
+<div class="card"><div class="metric">2</div>Evaluation metrics: R² & RMSE</div>
+</div>
+
+<h2>Prediction Demo</h2>
+<div class="card">
+<p>This GitHub Pages demo is a <b>static presentation demo</b>. The actual machine-learning prediction runs through the Flask application in the repository.</p>
+<label>Population</label><input type="number" id="population" placeholder="e.g. 31056597">
+<label>Area (sq. mi.)</label><input type="number" id="area" placeholder="e.g. 647500">
+<label>Literacy (%)</label><input type="number" id="literacy" placeholder="e.g. 35">
+<label>Industry (%)</label><input type="number" id="industry" placeholder="e.g. 24">
+<label>Service (%)</label><input type="number" id="service" placeholder="e.g. 35">
+<button onclick="demo()">Show Demo Result</button>
+<div id="result"></div>
+</div>
+
+<h2>Technology Stack</h2>
+<div class="grid">
+<div class="card"><b>Python</b><br>Data processing and model development</div>
+<div class="card"><b>Pandas / NumPy</b><br>Data preparation</div>
+<div class="card"><b>Scikit-learn</b><br>Regression models</div>
+<div class="card"><b>Matplotlib / Seaborn</b><br>Visualization</div>
+<div class="card"><b>Flask</b><br>Prediction web application</div>
+</div>
+</main>
+<footer>Economic Growth — GDP Analysis and Prediction</footer>
+<script>
+function demo(){
+ const vals=['population','area','literacy','industry','service'].map(x=>document.getElementById(x).value);
+ if(vals.some(v=>!v)){document.getElementById('result').style.display='block';document.getElementById('result').textContent='Enter the demo values first.';return;}
+ document.getElementById('result').style.display='block';
+ document.getElementById('result').textContent='Demo submitted successfully. The live ML prediction is provided by the Flask application in this project.';
+}
+</script>
+</body>
+</html>
